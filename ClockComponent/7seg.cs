@@ -43,12 +43,7 @@ namespace ClockComponent
 
             czasomierz = 0;
             for (int i = 1; i < 7; i++)
-                zeruj(i);
-        }
-        private void zeruj(int numer)
-        {
-            for (int i = 0; i < 7; i++)
-                panels[numer-1][i].Visible = cyfry[0][i];
+                wyswietl(i, 0);
         }
         private void wyswietl(int numer, int cyfra) 
         {
@@ -76,7 +71,7 @@ namespace ClockComponent
                 }
                 else
                 {
-                    zeruj(1);
+                    wyswietl(1, 0);
                     wyswietl(2, godziny);
                 }
 
@@ -93,7 +88,7 @@ namespace ClockComponent
                 }
                 else
                 {
-                    zeruj(3);
+                    wyswietl(3, 0);
                     wyswietl(4, minuty);
                 }
             }
@@ -109,7 +104,7 @@ namespace ClockComponent
                 }
                 else
                 {
-                    zeruj(5);
+                    wyswietl(5, 0);
                     wyswietl(6, sekundy);
                 }
             }

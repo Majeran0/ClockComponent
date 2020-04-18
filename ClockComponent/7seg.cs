@@ -25,6 +25,9 @@ namespace ClockComponent
             new bool[] { true, true, true, true, false, true, true}
         };
         private Panel[][] panels;
+        /// <summary>
+        /// przechowuje aktualny czas w sekundach
+        /// </summary>
         public int czasomierz { get; set; }
 
         public Clock7Seg()
@@ -45,12 +48,20 @@ namespace ClockComponent
             for (int i = 1; i < 7; i++)
                 wyswietl(i, 0);
         }
+        /// <summary>
+        /// metoda <c>wyswietl</c> ustawia podną cyfre na wyświetlaczu o podanym numerze
+        /// </summary>
+        /// <param name="numer"></param>
+        /// <param name="cyfra"></param>
         private void wyswietl(int numer, int cyfra) 
         {
             for (int i = 0; i < 7; i++)
                 panels[numer-1][i].Visible = cyfry[cyfra][i];
         }
-
+        /// <summary>
+        /// metoda <c>ustaw</c> ustawia podany czas w sekundach na wyświetlaczu
+        /// </summary>
+        /// <param name="czas"></param>
         public void ustaw(int czas)
         {
             var godziny = czas / 3600;

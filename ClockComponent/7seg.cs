@@ -77,7 +77,7 @@ namespace ClockComponent
 
         [
         Category("Ustawienia"),
-        Description("Pokaż sekundy.")
+        Description("Pokaż dwukropki.")
         ]
         public bool Kropki {
             get {

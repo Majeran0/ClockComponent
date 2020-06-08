@@ -11,6 +11,32 @@ namespace ClockComponent
 {
     public partial class Clock7Seg : UserControl
     {
+        private bool kropki = true;
+        private bool sekundy = true;
+        private Color kolor = Color.Red;
+
+        [
+        Category("Ustawienia"),
+        Description("Kolor cyferblatu.")
+        ]
+        public Color Kolor {
+            get {
+                return kolor;
+            }
+            set {
+                kolor = value;
+                foreach(Panel[] x in panels)
+                {
+                    foreach(Panel y in x)
+                    {
+                        y.BackColor = kolor;
+                    }
+                }
+                Invalidate();
+            }
+        }
+
+
         private bool[][] cyfry = new bool[][]
         {
             new bool[] { true, true, true, true, true, true, false },

@@ -63,6 +63,7 @@
             // clock7Seg1
             // 
             this.clock7Seg1.czasomierz = 0;
+            this.clock7Seg1.Kolor = System.Drawing.Color.Red;
             this.clock7Seg1.Location = new System.Drawing.Point(13, 13);
             this.clock7Seg1.Name = "clock7Seg1";
             this.clock7Seg1.Size = new System.Drawing.Size(640, 173);

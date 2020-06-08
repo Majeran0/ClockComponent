@@ -179,5 +179,20 @@ namespace ClockComponent
                 }
             }
         }
+
+        private void seg6B_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void seg1F_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void seg3F_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

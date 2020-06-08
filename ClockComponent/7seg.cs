@@ -12,7 +12,7 @@ namespace ClockComponent
     public partial class Clock7Seg : UserControl
     {
         private bool kropki = true;
-        private bool sekundy = true;
+        private bool sekundywys = true;
         private Color kolor = Color.Red;
 
         [
@@ -36,6 +36,33 @@ namespace ClockComponent
             }
         }
 
+        [
+        Category("Ustawienia"),
+        Description("Pokaż sekundy.")
+        ]
+        public bool SekundyWys {
+            get {
+                return sekundywys;
+            }
+            set {
+                sekundywys = value;
+                for(int i = 0; i<2; i++)
+                {
+                    for(int j= 0; j<7; j++)
+                    {
+                        if (sekundywys == false)
+                            panels[5 - i][j].Visible = false;
+                        else
+                        {
+                            panels[5 - i][j].Visible = true;
+                            wyswietl(6-i, 0);
+                        }
+
+                    }
+                }
+                Invalidate();
+            }
+        }
 
         private bool[][] cyfry = new bool[][]
         {
@@ -136,13 +163,19 @@ namespace ClockComponent
                     liczba2 = sekundy % 10;
                     liczba1 = (sekundy - liczba2)/10;
 
-                    wyswietl(5, liczba1);
-                    wyswietl(6, liczba2);
+                    if (SekundyWys == true)
+                    {
+                        wyswietl(5, liczba1);
+                        wyswietl(6, liczba2);
+                    }
                 }
                 else
                 {
-                    wyswietl(5, 0);
-                    wyswietl(6, sekundy);
+                    if (SekundyWys == true)
+                    {
+                        wyswietl(5, 0);
+                        wyswietl(6, sekundy);
+                    }
                 }
             }
         }

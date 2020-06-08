@@ -32,6 +32,7 @@ namespace ClockComponent
                         y.BackColor = kolor;
                     }
                 }
+                
                 Invalidate();
             }
         }
@@ -51,14 +52,52 @@ namespace ClockComponent
                     for(int j= 0; j<7; j++)
                     {
                         if (sekundywys == false)
+                        {
                             panels[5 - i][j].Visible = false;
+                            dot2A.Visible = false;
+                            dot2B.Visible = false;
+                        }
                         else
                         {
                             panels[5 - i][j].Visible = true;
-                            wyswietl(6-i, 0);
+                            if(Kropki == true)
+                            {
+                                dot2A.Visible = true;
+                                dot2B.Visible = true;
+                            }
+
+                            wyswietl(6 - i, 0);
                         }
 
                     }
+                }
+                Invalidate();
+            }
+        }
+
+        [
+        Category("Ustawienia"),
+        Description("Pokaż sekundy.")
+        ]
+        public bool Kropki {
+            get {
+                return kropki;
+            }
+            set {
+                kropki = value;
+                if(kropki == false)
+                {
+                    for (int i = 0; i < 4; i++)
+                        panels[6][i].Visible = false;
+                }
+                else
+                {
+                    if(SekundyWys == true)
+                        for (int i = 0; i < 4; i++)
+                            panels[6][i].Visible = true;
+                    else
+                        for (int i = 0; i < 2; i++)
+                            panels[6][i].Visible = true;
                 }
                 Invalidate();
             }
@@ -94,7 +133,8 @@ namespace ClockComponent
                 new Panel[] {seg3A, seg3B, seg3C, seg3D, seg3E, seg3F, seg3G},
                 new Panel[] {seg4A, seg4B, seg4C, seg4D, seg4E, seg4F, seg4G},
                 new Panel[] {seg5A, seg5B, seg5C, seg5D, seg5E, seg5F, seg5G},
-                new Panel[] {seg6A, seg6B, seg6C, seg6D, seg6E, seg6F, seg6G}
+                new Panel[] {seg6A, seg6B, seg6C, seg6D, seg6E, seg6F, seg6G},
+                new Panel[] {dot1A, dot1B, dot2A, dot2B}
             };
 
             czasomierz = 0;

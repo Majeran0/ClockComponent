@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClockComponent</name>
+    </assembly>
+    <members>
+        <member name="P:ClockComponent.Clock7Seg.czasomierz">
+            <summary>
+            przechowuje aktualny czas w sekundach
+            </summary>
+        </member>
+        <member name="M:ClockComponent.Clock7Seg.wyswietl(System.Int32,System.Int32)">
+            <summary>
+            metoda <c>wyswietl</c> ustawia podną cyfre na wyświetlaczu o podanym numerze
+            </summary>
+            <param name="numer"></param>
+            <param name="cyfra"></param>
+        </member>
+        <member name="M:ClockComponent.Clock7Seg.ustaw(System.Int32)">
+            <summary>
+            metoda <c>ustaw</c> ustawia podany czas w sekundach na wyświetlaczu
+            </summary>
+            <param name="czas"></param>
+        </member>
+        <member name="F:ClockComponent.Clock7Seg.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ClockComponent.Clock7Seg.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ClockComponent.Clock7Seg.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
